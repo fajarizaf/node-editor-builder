@@ -1,0 +1,486 @@
+<html>
+    <head>
+        
+        <style type="text/css" >
+
+            .flex-container {
+                display:flex;
+                width:100%;
+                border-bottom: 1px solid #9d181a;
+                padding-bottom:20px;
+                padding-top:20px;
+            }
+
+            .field {
+                border-bottom:2px solid #e4e6eb;
+                padding-bottom:15px;
+                padding-top:15px;
+                font-size: 11px;
+            }
+
+            body {
+                font-family: sans-serif;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div style="width:750px;">
+
+            <table style="border-bottom: 1px solid #9d181a;">
+                <tr>
+                    <td style="width:70%">
+                        <img style="width:150px" src="data:image/png;base64,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" />   
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKSSURBVEhL5VVNSFRRFP7mfxpwZgqatjXNtgZH3Im2qE0boZURlNCiaFFBhESbpBDBxCwGLESKoIVJuEllFGwEJ6HICoSaTNKcwUSzdBwY31/nXOcOb8ZMiVz1weOee+493/3OOfe9ZzEI2AFY8+M/x39AzC2RbdE0Hbq+bpe2atvNk9ssFouwNU2D3W4Xvt/hj4qZwHwu26qqFkhTqTQWFr4X1szYlJg3sjqpUKbMhPz09Q+i4VojZma+Cr+u62KU2EDMJJKUR1XVYBCplXbquoaXiVe4e+8BotFOJJOf4fHsykcWQxBLMjM43bW1NVJng9VmRdfDJzhdfwHdPb0YG3uNaVJaEQnD7/flI4ohiM0pcw05bZvNBpfLhYmJD7h85Tra2zswGIsjFAriYGg/FheXsC+wlxR7BBHHm1GkmBcdDgepVSjNSTS33BF1jMWGcaSmConRAThdDsTjCXi9Xqi6CooURKUQ90WSLi+v4EZjM5KfpmAnxXPf5qk5szh6rAYNVy+ib2AInV2PoSoabFQijbITovIcZhSax8TciJN1JxApP4yp6S+Ym5tHbe1xtLU2YfjFCG63RqnuCpWIsiJSr7cMbqeTX4YNpRCK2ckncl0rKysQDh9C/Zk6zM6mEImUI5fL4Xn/ELLZLHy+MlBHRHMDgQBcbjcMii+mLWkegw9wkopg8ACqq6vE/Vz68RP3O9rwrOeRyCazuiqU79ntXxdFe0pLwQ7y6zwIsM0P3Q4x/5icNOpOnTW6n/aK+UomY4y/eWecO3/JiI+Mir2KohqUgViXEMQSkpTBxGyPv31v3LzVYqRTaeGXUBSlQGaOk9j0I8RuWXtGqb0V/urXZA7Z7MBtK2bI+Y4p3hrAL9HL4NmbVfkzAAAAAElFTkSuQmCC" />
+                                </td>
+                                <td style="font-size:10px;color:#666">info@mettadc.com | www.mettadc.com</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJRSURBVDhPVVNNTxNRFD0z/bBNWmJ1owQRobFQFDfG0ECAhGjUBKNGIyw0cYVu/PgFuhJXoht1YU2UjT8ADZq4UBIlaTAYBYmWRBsbdCMt0pbOTPu8945vxDtz8z7m3nPOve+NoVyDYRjgsV6vw+fzYaPVajWYpunF8MhmULDyNunhN59fxvzCIqrVKuLxVnS075bv7AyiAYSZ2Xjxe20N6fQEpqZewnYcAbMdGwP9vbh65SJisc2izANgZtFA9mjiCcbGxhEMBmHZliRzCQSPkeFTuHxpFNFoxFPA9TC5ymaX1OGjp9Xefb3q7r2HqlhcFX/67IUaPHhcJToOqFev30is4zisVpk0F6Sv375j7v0HJBJxpLr3o6EhKt7f14NkMoFfKwV8yS79J9t0ZXFyDgG/H6AiRBIZ77udNRAObcKnhc8oFIrenjDzwjTco1ivrqNQLMrxMMsKMVYqFZBUNO9sQiTi1swsfg7yE2NXV6c0I5fL4/ad+5idnZPGZTLv8HF+EaFQCC3NTbQXEFAmMrhhPFn+8RPXrt/EzEwG4XAYlmWxcgQCAdg2se5oxPitG2hr2+XVbXIiLxq3b8O5s2dcRHJmZefkUqmEEyeH0EqJukweJVkDJJPtODZ0hJqy6iKTc/3d1P3BgT7Q+fyTTC4N063fuiVG7MMkrQXlclnkcq0XRs9Ls7Rct2FkNJEDZ3cc98JMT79VqZ5DqnNPStGtUwSiuDf6QmmTZG0MoAMmJ5+rB+nH3m3S+zzXJj/GXwVSBxsFer8lBXs1bowBgD9j5qteY6nEowAAAABJRU5ErkJggg==" />
+                                </td>
+                                <td style="font-size:10px;color:#666;padding-bottom:10px;">SCBD, Treasury Tower, 5th Floor, District 8
+                                    Jl. Jenderal Sudirman No.52-53,
+                                    South Jakarta, 12190, Indonesia
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="flex-container" style="border-bottom: 4px solid #9d181a;padding-bottom:0px;padding-top:0px;">
+                <h2 style="margin-left:180px">CERTIFICATION OF COMPLETION</h2>
+            </div>
+            <div class="flex-container" style="padding-bottom:0px;padding-bottom:0px;padding-top:4px"></div>
+
+            <div class="field">
+                <span><b>CoC no.</b></span><span style="margin-left:55px;">{{data_coc.coc_number}}</span><span style="margin-left:147px;"><b>CoC Date</b></span><span style="margin-left:20px;">{{data_coc.coc_date}}</span>
+            </div>
+            <div class="field" style="border-bottom: 1px solid #9d181a;">
+                <span><b>Sales Order no</b></span><span style="margin-left:20px;">{{data_coc.so_number}}</span><span style="margin-left:113px;"><b>Sales Order Date</b></span><span style="margin-left:20px;">{{data_coc.so_date}}</span>
+            </div>
+
+            <div class="field">
+                <span>Customer Name</span><span style="margin-left:32px;">{{data_customer.company_name}}</span>
+            </div>
+
+            <div class="field" style="border-bottom: 1px solid #9d181a;">
+                <span>Customer Address</span><span style="margin-left:20px;">{{data_customer.company_address}}</span>
+            </div>
+
+            <br/><br/>
+            <table style="width:100%" cellspacing="0" cellpadding="6" border="0">
+
+                {{#each data_request_services}}
+
+                    <!-- Smart Hands -->
+		            {{#ifCond this.req_category "==" 'Smart Hands'}}
+
+                        <tr>
+                            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="23" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+                            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="23" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff" style="font-size:11px">{{this.req_category}}</font></b></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px">{{'usr_request_smarthands.CatalogueName'}}</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px">{{'usr_request_smarthands.RequestItem'}}</font></td>
+                        </tr>
+
+                    {{/ifCond}}
+
+
+                    <!-- Additional Services -->
+                    {{#ifCond this.req_type "==" 'Additional Accessories'}}
+
+                        <tr>
+                            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="23" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+                            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="23" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff" style="font-size:11px;">{{this.req_category}} - {{this.req_type}}</font></b></td>
+                        </tr>
+
+                        {{#each RequestItem}}
+
+                            <tr>
+                                <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                                <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">{{this.ProductName}}</font></td>
+                                <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.qty}} Unit</font></td>
+                            </tr>
+
+                        {{/each}}
+
+                    {{/ifCond}}
+
+
+                    <!-- Additional Services -->
+                    {{#ifCond this.req_type "==" 'Additional Power'}}
+
+                        <tr>
+                            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="23" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+                            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="23" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff" style="font-size:11px;">{{this.req_category}} - {{this.req_type}}</font></b></td>
+                        </tr>
+                        
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Rack ID</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Rack}}</font></td>
+                        </tr>
+            
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Power Requirement</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Power_Requirement}} kVa</font></td>
+                        </tr>
+            
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Descriptions</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.ItemDescriptions}}</font></td>
+                        </tr>
+
+                    {{/ifCond}}
+
+
+                    <!-- Additional Services -->
+                    {{#ifCond this.req_type "==" 'Activation Rack'}}
+
+                        <tr>
+                            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="23" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+                            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="23" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff" style="font-size:11px;">{{this.req_category}} - {{this.req_type}}</font></b></td>
+                        </tr>
+                        
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Rack ID</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.RackID}}</font></td>
+                        </tr>
+            
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Activation Date</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.ActivationDate}}</font></td>
+                        </tr>
+
+                    {{/ifCond}}
+
+
+                    <!-- Additional Services -->
+                    {{#ifCond this.req_type "==" 'Additional Access Card'}}
+
+                        <tr>
+                            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="23" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+                            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="23" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff" style="font-size:11px;">{{this.req_category}} - {{this.req_type}}</font></b></td>
+                        </tr>
+                        
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Reason</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Reason}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Salutation</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Salutation}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">First Name</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.First_Name}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Last Name</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Last_Name}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Passport</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Passport}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Phone</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Phone}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Email</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Email}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Designation</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Designation}}</font></td>
+                        </tr>
+
+                    {{/ifCond}}
+
+
+                    <!-- Additional Services -->
+                    {{#ifCond this.req_type "==" 'Cross Connect'}}
+
+                            <tr>
+                                <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="23" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+                                <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="23" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff" style="font-size:11px;">{{this.req_category}} </font></b></td>
+                            </tr>
+                            
+                            <tr>
+                                <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000" style="font-size:11px;">A</font></td>
+                                <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Source</font></td>
+                                <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font></td>
+                            </tr>
+
+                            {{#each this.usr_request_cross_connect.Source}}
+                                <tr>
+                                    <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                                    <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">{{@key}}</font></td>
+                                    <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                    <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this}}</font></td>
+                                </tr>
+                            {{/each}}
+
+                            <tr>
+                                <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000" style="font-size:11px;">B</font></td>
+                                <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Destination</font></td>
+                                <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font></td>
+                            </tr>
+
+                            {{#each this.usr_request_cross_connect.Destination}}
+                                <tr>
+                                    <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                                    <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">{{@key}}</font></td>
+                                    <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                    <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this}}</font></td>
+                                </tr>
+                            {{/each}}
+
+                            <tr>
+                                <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                                <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">ActivationDate</font></td>
+                                <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.usr_request_cross_connect.ActivationDate}}</font></td>
+                            </tr>
+
+                            <tr>
+                                <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                                <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">CrossConnectType</font></td>
+                                <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.usr_request_cross_connect.CrossConnectType}}</font></td>
+                            </tr>
+
+                            <tr>
+                                <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                                <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">RequestType</font></td>
+                                <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.usr_request_cross_connect.RequestType}}</font></td>
+                            </tr>
+
+                            <tr>
+                                <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                                <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Descriptions</font></td>
+                                <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                                <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.usr_request_cross_connect.ItemDescriptions}}</font></td>
+                            </tr>
+
+                    {{/ifCond}}
+
+
+                {{/each}}
+
+                <tr>
+                    <td valign="middle" style="border-top:2px solid #000" align="center" ><font color="#000000"></font></td>
+                    <td colspan="3"  style="border-top:2px solid #000" colspan="2" valign="middle"><font color="#000000"></font></td>
+                    <td valign="middle"  style="border-top:2px solid #000"  align="center"><font color="#000000"></font></td>
+                    <td colspan="6" style="border-top:2px solid #000" valign="middle" align="left"><font color="#000000"></font></td>
+                </tr>
+            
+                <tr>
+                    <td valign="middle" align="center" ><font color="#000000"></font></td>
+                    <td colspan="3"  colspan="2" valign="middle"><font color="#000000"></font></td>
+                    <td valign="middle"    align="center"><font color="#000000"></font></td>
+                    <td colspan="6"  valign="middle" align="left"><font color="#000000"></font></td>
+                </tr>
+
+
+                {{#each data_request_rack}}
+
+                    {{#ifCond this.req_type "==" 'Additional Rack'}}
+
+                        <tr>
+                            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="23" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+                            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="23" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff" style="font-size:11px;">{{this.req_category}} - {{this.req_type}}</font></b></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Amount Rack</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{ this.RequestItem.Amount_Rack }}</font></td>
+                        </tr>
+                        
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Rack Size</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Rack_Size}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Power</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.RequestItem.Power}} kVa</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Descriptions</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{"usr_request_additional.ItemDescriptions"}}</font> </td>
+                        </tr>
+
+                    {{/ifCond}}
+
+                    {{#ifCond this.req_type "==" 'Order Rack'}}
+
+                        <tr>
+                            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="23" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+                            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="23" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff" style="font-size:11px;">{{this.req_category}}</font></b></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Amount Rack</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.usr_request_amountrack.Amount_rack}}</font></td>
+                        </tr>
+                        
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Rack Size</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000" style="font-size:11px;">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.usr_request_amountrack.Item.Rack_Size}}</font></td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Power</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.usr_request_amountrack.Item.Power}} kVa</font> </td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+                            <td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000" style="font-size:11px;">Rack Descriptions</font></td>
+                            <td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+                            <td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000" style="font-size:11px;">{{this.usr_request_amountrack.Rack_descriptions}}</font></td>
+                        </tr>
+
+                    {{/ifCond}}
+
+                {{/each}}
+
+
+                <tr>
+                    <td valign="middle" style="border-top:2px solid #000" align="center" ><font color="#000000"></font></td>
+                    <td colspan="3"  style="border-top:2px solid #000" colspan="2" valign="middle"><font color="#000000"></font></td>
+                    <td valign="middle"  style="border-top:2px solid #000"  align="center"><font color="#000000"></font></td>
+                    <td colspan="6" style="border-top:2px solid #000" valign="middle" align="left"><font color="#000000"></font></td>
+                </tr>
+
+
+            </table>
+
+
+            <div class="field">
+                <span><b>Description :</b></span><span style="margin-left:50px;">{{data_coc.notes}}</span>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+
+            <div class="field">
+                <span><b>RFS Date.</b></span><span style="margin-left:50px;">{{data_coc.coc_number}}</span><span style="margin-left:147px;"><b>Billing Date</b></span><span style="margin-left:20px;"></span>
+            </div>
+
+            <div class="field" style="border-bottom: 1px solid #9d181a;">
+                <b style="font-style:italic">
+                    Customer must sign and return this Certification of Completion ("CoC") within seven (7) calendar days from the CoC date. If company does not receive the signed Certification of Completion within the Customer is deemed to have approve this Certification of Completion
+                </b>
+            </div>
+
+            <div  style="padding-top:0px;padding-bottom:0px;">
+
+                <div style="width:50%;border-right: 1px solid #9d181a;padding-top:20px;padding-bottom:20px;float:left;">
+                    <span style="font-size:11px;">PT. MettaDC Teknologi Indonesia</span>
+                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                    <div class="field">
+                        <span><b>Name</b></span><span style="margin-left:25px;">{{data_coc.ops_name}}</span>
+                    </div>
+                    <div class="field">
+                        <span><b>Title</b></span><span style="margin-left:35px;">Services Operation Manager</span>
+                    </div>
+                    <div class="field">
+                        <span><b>Date</b></span><span style="margin-left:35px;">{{data_coc.coc_date}}</span>
+                    </div>
+                    
+                </div>
+                <div style="width:45%;padding-top:20px;padding-bottom:20px;padding-left:10px;float:left;">
+                    <span style="font-size:11px;">{{data_customer.company_name}}</span>
+                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                    <div class="field">
+                        <span><b>Name</b></span><span style="margin-left:25px;">{{data_customer.customer_name}}</span>
+                    </div>
+                    <div class="field">
+                        <span><b>Title</b></span><span style="margin-left:35px;">Account Manager</span>
+                    </div>
+                    <div class="field">
+                        <span><b>Date</b></span><span style="margin-left:35px;">{{data_coc.coc_date}}</span>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div style="border-bottom:0px;">
+
+                <div style="width:50%;font-size:11px;font-style:italic;float:left;"><span>Certification of Completion | Confidential under MettaDC</span></spam></div>
+                <div style="width:50%;text-align:right;font-size:11px;font-style:italic;float:left;"><span style="">Internal Document</span></div>
+                
+            </div>
+
+        </div>
+    </body>
+</html>

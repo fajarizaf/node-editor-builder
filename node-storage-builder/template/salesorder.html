@@ -1,0 +1,913 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:10px }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black;  } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+		comment { display:none;  } 
+	</style>
+	
+</head>
+
+<body>
+    
+<table cellspacing="0" cellpadding="0" border="0">
+	<colgroup width="45"></colgroup>
+	<colgroup width="153"></colgroup>
+	<colgroup width="21"></colgroup>
+	<colgroup width="161"></colgroup>
+	<colgroup width="37"></colgroup>
+	<colgroup width="69"></colgroup>
+	<colgroup width="154"></colgroup>
+	<colgroup width="161"></colgroup>
+	<colgroup width="25"></colgroup>
+	<colgroup width="143"></colgroup>
+	<colgroup width="159"></colgroup>
+	<tr>
+    <td height="13" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td height="110" align="left" valign=middle><font color="#000000"><br><img src="http://202.145.0.38/fajar/logo-doc.png" width=120 height=119 hspace=22 vspace=8>
+		</font></td>
+		<td colspan=4 align="left" valign=middle><font color="#000000">SCBD, Treasury Tower, 5th Floor, District 8, <br>Jl. Jenderal Sudirman No.52-53, RT.5/RW.3, <br>Senayan, South Jakarta<br>12190</font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="13" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Date</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000">{{data_so.so_date}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Sales Manager</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{data_sales.sales_name}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Sales Order ID</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000">{{data_so.so_number}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Email Address</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{data_sales.sales_email}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" bgcolor="#C00000" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF">CUSTOMER</font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Customer Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=8 valign=middle><font color="#000000">{{data_customer.company_name}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left"valign=middle><font color="#000000">Email Address</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=8 valign=middle><font color="#000000">{{data_customer.company_email}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Phone No.</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=8 valign=middle><font color="#000000">{{data_customer.company_phone}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Address</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=8 valign=middle><font color="#000000">{{data_customer.company_address}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF">TERMS &amp; PRICING </font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Contract Term</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000">{{data_so.contract_term}} Months<br></font></td>
+		<td colspan=2 align="center" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Service Request Date</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{data_so.order_date}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Service Type</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000">Colocation<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Commencement Date</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000">{{data_so.commencement_date}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+
+
+    {{#if data_request_services.length}}
+        <tr>
+            <td valign="middle" height="23" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" colspan="3" align="left"><b><font color="#000000">1. Services</font></b></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        </tr>
+        <tr>
+            <td valign="middle" height="69" align="left"><font color="#000000"><br></font></td>
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" colspan="2" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Item </font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Item Description</font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Qty</font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Unit Price Non <br>Recuring Charge (NRC)</font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Unit Price Monthly <br>Recurring Charges (MRC) </font></b></td>
+            <td style="border-top: 2px solid #000000; border-bottom: 0px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Sub Total NRC</font></b></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Sub Total MRC</font></b></td>
+        </tr>
+    {{/if}}
+
+
+
+    {{#each data_request_services}}
+
+    
+
+    <!-- Smart Hands -->
+        {{#ifCond this.req_category "==" 'Smart Hands'}}
+
+        <tr>
+            <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">
+                
+                {{'usr_request_smarthands.CatalogueName'}}
+            
+                <br></font>
+            </td>
+
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="left"><font color="#000000">
+                
+                {{'usr_request_smarthands.RequestItem'}}
+                
+                <br></font>
+            </td>
+            <td colspan=2 style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                1
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.NRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.MRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_NRC_s}}<br></font></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_MRC_s}}<br></font></td>
+        </tr>
+        
+        {{/ifCond}}
+
+    <!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Additional Accessories'}}
+        
+        {{#each RequestItem}}
+            
+                <tr>
+                    <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+                    <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">
+                        
+                        Additional Accessories
+                    
+                        <br></font>
+                    </td>
+
+                    <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="left"><font color="#000000"> 
+                        <p>{{this.ProductName}}</p>
+                        <br></font>
+                    </td>
+                    <td colspan=2 style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                        
+                           {{this.qty}}
+
+                        <br></font>
+                    </td>
+                    
+                    <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                        
+                        {{this.productPrice_NRC}}
+                        
+                        <br></font>
+                    </td>
+                    <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                        0
+                        <br></font>
+                    </td>
+                    <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal}}<br></font></td>
+                    <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">0<br></font></td>
+                </tr>
+
+            
+        {{/each}}
+
+        {{/ifCond}}
+
+
+<!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Additional Power'}}
+    
+        <tr>
+            <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">
+                
+                {{this.req_type}}
+            
+                <br></font>
+            </td>
+
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="left"><font color="#000000">
+
+                <p>Rack ID : {{this.RequestItem.Rack}}</p>
+                <p>Power Requirement : {{this.RequestItem.Power_Requirement }} kVa</p>
+                
+                <br></font>
+            </td>
+            <td colspan=2 style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                1
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.NRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.MRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_NRC_s}}<br></font></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_MRC_s}}<br></font></td>
+        </tr>
+        {{/ifCond}}
+
+
+<!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Activation Rack'}}
+            
+        <tr>
+            <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">
+                
+                {{this.req_type}}
+            
+                <br></font>
+            </td>
+
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="left"><font color="#000000">
+
+                <p>Rack ID : {{this.RequestItem.RackID}}</p>
+                <p>Activation Date : {{this.RequestItem.ActivationDate }}</p>
+                
+                <br></font>
+            </td>
+            <td colspan=2 style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                1
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.NRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.MRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_NRC_s}}<br></font></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_MRC_s}}<br></font></td>
+        </tr>
+        {{/ifCond}}
+
+
+        <!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Additional Access Card'}}
+
+        <tr>
+            <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">
+                
+                {{this.req_type}}
+            
+                <br></font>
+            </td>
+
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="left"><font color="#000000">
+                
+                <p>Reason : {{this.RequestItem.Reason}}</p>
+                <p>Salutation : {{this.RequestItem.Salutation}}</p>
+                <p>First Name : {{this.RequestItem.First_Name}}</p>
+                <p>Last Name : {{this.RequestItem.Last_Name}}</p>
+                <p>Passport : {{this.RequestItem.Passport}}</p>
+                <p>Phone : {{this.RequestItem.Phone}}</p>
+                <p>Email : {{this.RequestItem.Email}}</p>
+                <p>Designation : {{this.RequestItem.Designation}}</p>
+                
+                <br></font>
+            </td>
+            <td colspan=2 style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                1
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.NRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.MRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_NRC_s}}<br></font></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_MRC_s}}<br></font></td>
+        </tr>
+        {{/ifCond}}
+
+<!-- Cross Connect -->
+
+        {{#ifCond this.req_type "==" 'Cross Connect'}}
+
+        <tr>
+            <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">
+                
+                {{this.req_type}}
+            
+                <br></font>
+            </td>
+
+            <td style="border-top: 2px solid #000000; font-size:10px; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="left"><font color="#000000">
+                
+                Source : <br/>{{#each this.usr_request_cross_connect.Source}}
+                    {{@key}} : {{this}}<br/>
+                {{/each}}
+                </br>
+                Destination : <br/>{{#each this.usr_request_cross_connect.Destination}}
+                    {{@key}} : {{this}}<br/>
+                {{/each}}
+                </br>
+                ActivationDate : {{this.usr_request_cross_connect.ActivationDate}}</br>
+                CrossConnectType : {{this.usr_request_cross_connect.CrossConnectType}}</br>
+                RequestType : {{this.usr_request_cross_connect.RequestType}}</br>
+                Descriptions : {{this.usr_request_cross_connect.ItemDescriptions}}</br>
+                
+                <br></font>
+            </td>
+            <td colspan=2 style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                1
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.NRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.MRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_NRC_s}}<br></font></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_MRC_s}}<br></font></td>
+        </tr>
+        {{/ifCond}}
+
+    {{/each}}
+
+    
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td style="border-top: 2px solid #000000;" colspan="2" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" colspan="2" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" colspan="2" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" valign="middle"  align="center"></td>
+    </tr>
+
+
+
+
+
+    {{#if data_request_rack.length}}
+
+        <tr>
+            <td valign="middle" height="23" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" colspan="3" align="left"><b><font color="#000000">2. Rack</font></b></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+            <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        </tr>
+        <tr>
+            <td valign="middle" height="69" align="left"><font color="#000000"><br></font></td>
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" colspan="2" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Item </font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Item Description</font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Qty</font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Unit Price Non <br>Recuring Charge (NRC)</font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Unit Price Monthly <br>Recurring Charges (MRC) </font></b></td>
+            <td style="border-top: 2px solid #000000; border-bottom: 0px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Sub Total NRC</font></b></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Sub Total MRC</font></b></td>
+        </tr>
+
+    {{/if}}    
+        
+    
+    {{#each data_request_rack}}
+
+    <!-- Smart Hands -->
+        {{#ifCond this.req_type "==" 'Additional Rack'}}
+
+        <tr>
+            <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">
+                
+                {{this.req_type}}
+            
+                <br></font>
+            </td>
+
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="left"><font color="#000000">
+
+                <p>Rack Size : {{ this.RequestItem.Rack_Size }}</p>
+                <p>Power : {{ this.RequestItem.Power }}</p>
+                <p>{{{this.usr_request_amountrack.Rack_descriptions}}}</p>
+                
+                <br></font>
+            </td>
+            <td colspan=2 style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                {{ this.RequestItem.Amount_Rack }}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.NRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.MRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_NRC_s}}<br></font></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_MRC_s}}<br></font></td>
+        </tr>
+        {{/ifCond}}
+
+
+<!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Order Rack'}}
+
+        <tr>
+            <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">
+                
+                <p>Shared Rack Space & Power</p>
+            
+                <br></font>
+            </td>
+
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="left"><font color="#000000">
+                
+                <p>{{this.usr_request_amountrack.Rack_descriptions}}</p>
+                
+                <br></font>
+            </td>
+            <td colspan=2 style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                {{ this.usr_request_amountrack.Amount_rack }}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000;" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.NRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">
+                {{this.MRC}}
+                <br></font>
+            </td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="2" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_NRC_s}}<br></font></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.subtotal_MRC_s}}<br></font></td>
+        </tr>
+
+        {{/ifCond}}
+
+    {{/each}}
+
+
+
+
+
+
+
+
+
+
+    
+    <tr>
+        <td valign="middle" height="23" align="left"><font color="#000000"><br></font></td>
+        <td style="border-top: 2px solid #000000;border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" colspan="7" valign="middle" align="center"><b><font color="#000000">Sub Total (Exclude VAT)</font></b></td>
+        <td style="border-top: 2px solid #000000;border-bottom: 2px solid #000000;" colspan="2" valign="middle" bgcolor="#E7E6E6" align="center"><font color="#000000">{{data_so.sub_total_NRC}}</font></td>
+        <td style="border-top: 2px solid #000000;border-bottom: 2px solid #000000; border-left: 1px solid #000000; border-right: 2px solid #000000" valign="middle" bgcolor="#E7E6E6" align="center"><font color="#000000">{{data_so.sub_total_MRC}}</font></td>
+    </tr>
+
+	<tr>
+		<td valign="middle" height="21" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td valign="middle" height="23" align="left"><font color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-left: 2px solid #000000" colspan="7" valign="middle" align="center"><b><font color="#000000">Discount (Exlude VAT) </font></b></td>
+		<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" colspan="3" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000"><br></font></b></td>
+	</tr>
+	<tr>
+		<td valign="middle" height="28" align="left"><font color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000" colspan="7" valign="middle" align="center"><b><font color="#000000">Total Contract Value (Exclude VAT)</font></b></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" colspan="3" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">{{data_so.grand_total}}</font></b></td>
+	</tr>
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td style="border-top: 2px solid #000000;" colspan="2" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" colspan="2" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" colspan="2" valign="middle" align="center"></td>
+        <td style="border-top: 2px solid #000000;" valign="middle"  align="center"></td>
+    </tr>
+
+    <tr>
+		<td height="21" align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF">SERVICES CHARGES </font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Total NRC</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000">{{data_so.sub_total_NRC}}<br></font></td>
+		<td colspan=2 align="center" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Total NRC</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{data_so.sub_total_NRC}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Total MRC</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000">{{data_so.sub_total_MRC}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Total MRC</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000">{{data_so.total_MRC}}<br></font></td>
+	</tr>
+    <tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td colspan=2 align="center" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><b>GRAND TOTAL</b></font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000">{{data_so.grand_total}}<br></font></td>
+	</tr>
+
+</table>
+
+{{{data_so.template_so}}}
+
+<table cellspacing="0" cellpadding="0" border="0">
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+    <tr>
+		<td height="21" align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" colspan="11" valign=middle bgcolor="#C00000"><font color="#FFFFFF">CONTACT INFORMATION (filled by Customer) </font></td>
+	</tr>
+
+    <tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><b></b>Technical Contact</b></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"><b></b>Billing Contact</b></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000"><br></font></td>
+	</tr>
+
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Contact Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{data_customer.tech_contact_name}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Contact Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000">{{data_customer.bill_contact_name}}<br></font></td>
+	</tr>
+
+    <tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Phone Number</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{data_customer.tech_phone_number}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Phone Number</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000">{{data_customer.bill_phone_number}}<br></font></td>
+	</tr>
+
+    <tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Email Address</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{data_customer.tech_email}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Email Address</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000">{{data_customer.bill_email}}<br></font></td>
+	</tr>
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+    <tr>
+		<td height="0" align="left" valign=middle bgcolor="#C00000"><font color="#000000"><br></font></td>
+		<td align="left" colspan="3" valign=middle bgcolor="#C00000"><font color="#FFFFFF">CUSTOMER SIGNATURE</font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" colspan="3" valign=middle bgcolor="#C00000"><font color="#FFFFFF">MettaDC SIGNATURE<br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+        <td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+		<td align="left" colspan="3" valign=middle bgcolor="#C00000"><font color="#FFFFFF"></font></td>
+        <td align="left" valign=middle bgcolor="#C00000"><font color="#FFFFFF"><br></font></td>
+	</tr>
+
+    <tr>
+		<td height="0" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Company Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000" style="vertical-align: middle;"><br>{{data_customer.company_name}}</font></td>
+		<td align="left" valign=middle><font color="#000000">Company Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle>&nbsp;&nbsp;<font color="#000000">PT. MettaDC Teknologi Indonesia</font></td>
+	</tr>
+    <tr>
+		<td height="0" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Name of Signatory</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000"><br>{{data_customer.customer_name}}</font></td>
+		<td align="left" valign=middle style="vertical-align: middle;"><font color="#000000">NPWP Number</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000"><br>&nbsp;&nbsp;63.605.775.4-014.000</font></td>
+	</tr>
+    <tr>
+		<td height="0" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Title</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000"><br>Account Manager</font></td>
+		<td align="left" valign=middle style="vertical-align: middle;"><font color="#000000">Name of Signatory </font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000"><br>&nbsp;&nbsp;{{data_sales.sales_name}}</font></td>
+	</tr>
+    <tr>
+		<td height="0" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Date Signed</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000"><br>{{data_so.so_date}}</font></td>
+		<td align="left" valign=middle style="vertical-align: middle;"><font color="#000000">Title</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000"><br>&nbsp;&nbsp;Account Manager</font></td>
+	</tr>
+    <tr>
+		<td height="0" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Date Signed</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000"><br>&nbsp;&nbsp;{{data_so.so_date}}</font></td>
+	</tr>
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+
+    <tr>
+		<td height="0" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Submited By</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000"><br>{{data_customer.customer_name}}</font></td>
+		<td align="left" valign=middle><font color="#000000">Submited By</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" valign=middle><font color="#000000"><br>&nbsp;&nbsp;{{data_sales.sales_name}}</font></td>
+	</tr>
+
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+
+    <tr>
+		<td height="21" align="left" valign=middle bgcolor="#fff"><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#FFFFFF"><br></font></td>
+		<td align="left" colspan="2" style="border-top:2px solid #000" valign=middle bgcolor="#fff"><font>(Authorized Signature & Company Stamp)<br></font></td>
+        <td align="left" valign=middle><font color="#FFFFFF"><br></font></td>
+		<td align="left" valign=middle><font color="#FFFFFF"><br></font></td>
+        <td align="left" valign=middle><font color="#FFFFFF"><br></font></td>
+		<td align="left" style="border-top:2px solid #000" colspan="2" valign=middle><font>(Authorized Signature & Company Stamp)<br></font></td>
+	</tr>
+
+
+    <tr>
+        <td valign="middle" height="11" align="left"><font color="#000000"><br></font></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+        <td  colspan="2" valign="middle" align="center"></td>
+    </tr>
+
+    <tr>
+        <td colspan="11">
+            <p>Please sign and return all exhibit(s), addenda(um) and/or policies listed below with this Sales Order. Failure to do so may result in delay processing 
+            </p>
+            <p>Please email a signed copy of this Sales Order to xxxxxxxxxx
+            </p>
+            <p>Internal Use only. Please send ONE set of duty signed contract to:
+            </p>
+            <p>PT. MettaDC Teknologi Indonesia (MettaDC)
+            </p>
+        </td>
+    </tr>
+
+</table>
+
+
+<!-- ************************************************************************** -->
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:10px }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black;  } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+		comment { display:none;  } 
+	</style>
+	
+</head>
+
+<body>
+<table cellspacing="0" cellpadding="6" border="0">
+	<colgroup width="45"></colgroup>
+	<colgroup width="153"></colgroup>
+	<colgroup width="21"></colgroup>
+	<colgroup width="161"></colgroup>
+	<colgroup width="37"></colgroup>
+	<colgroup width="69"></colgroup>
+	<colgroup width="154"></colgroup>
+	<colgroup width="161"></colgroup>
+	<colgroup width="25"></colgroup>
+	<colgroup width="143"></colgroup>
+	<colgroup width="159"></colgroup>
+	<tr>
+    <td height="13" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td height="110" align="left" valign=middle><font color="#000000"><br><img src="http://202.145.0.38/fajar/logo-doc.png" width=120 height=119 hspace=22 vspace=8>
+		</font></td>
+		<td colspan=4 align="left" valign=middle><font color="#000000"><h3>Work Order</h3>SCBD, Treasury Tower, 5th Floor, District 8, <br>Jl. Jenderal Sudirman No.52-53, RT.5/RW.3, <br>Senayan, South Jakarta<br>12190</font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="13" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Customer Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=8 valign=middle><font color="#000000">{{data_customer.customer_name}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Company Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=8 valign=middle><font color="#000000">{{data_customer.company_name}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left"valign=middle><font color="#000000">Date Of Entry Request</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=8 valign=middle><font color="#000000">{{data_wo.request_date}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Requester Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=8 valign=middle><font color="#000000">{{data_sales.sales_name}}<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" colspan="3" valign=middle><font color="#000000"></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000">*</font></td>
+		<td align="left" colspan="3" valign=middle><font color="#000000">Work Order should be send to Sales admin & Delivery team</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000">*</font></td>
+		<td align="left" colspan="3" valign=middle><font color="#000000">Please attached quotation and sales order when submitting WO</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+
+	{{#each data_request_services}}
+
+		<!-- Smart Hands -->
+		{{#ifCond this.req_category "==" 'Smart Hands'}}
+			<tr>
+				<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="43" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+				<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="43" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff">{{this.req_category}}</font></b></td>
+			</tr>
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">{{'usr_request_smarthands.CatalogueName'}}</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000">{{'usr_request_smarthands.RequestItem'}}</font></td>
+			</tr>
+		{{/ifCond}}
+
+		<!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Additional Accessories'}}
+			
+				<tr>
+					<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="43" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+					<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="43" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff">{{this.req_category}} - {{this.req_type}}</font></b></td>
+				</tr>
+
+				{{#each RequestItem}}
+
+					<tr>
+						<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+						<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">{{this.ProductName}}</font></td>
+						<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+						<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.qty}} Unit</td>
+					</tr>
+
+				{{/each}}
+
+		{{/ifCond}}
+
+		<!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Additional Power'}}
+
+				<tr>
+					<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="43" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+					<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="43" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff">{{this.req_category}} - {{this.req_type}}</font></b></td>
+				</tr>
+				
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Rack ID</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Rack}}</td>
+				</tr>
+	
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Power Requirement</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Power_Requirement}} kVa</td>
+				</tr>
+	
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Descriptions</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{"usr_request_additional.ItemDescriptions"}}</td>
+				</tr>
+
+		{{/ifCond}}
+
+
+		<!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Activation Rack'}}
+
+				<tr>
+					<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="43" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+					<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="43" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff">{{this.req_category}} - {{this.req_type}}</font></b></td>
+				</tr>
+				
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Rack ID</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.RackID}}</td>
+				</tr>
+	
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Activation Date</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.ActivationDate}}</td>
+				</tr>
+
+		{{/ifCond}}
+
+
+		<!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Additional Access Card'}}
+
+				<tr>
+					<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="43" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+					<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="43" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff">{{this.req_category}} - {{this.req_type}}</font></b></td>
+				</tr>
+				
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Reason</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Reason}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Salutation</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Salutation}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">First Name</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.First_Name}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Last Name</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Last_Name}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Passport</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Passport}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Phone</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Phone}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Email</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Email}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Designation</font></td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Designation}}</td>
+				</tr>
+
+
+		{{/ifCond}}
+
+		<!-- Additional Services -->
+        {{#ifCond this.req_type "==" 'Cross Connect'}}
+
+				<tr>
+					<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="43" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+					<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="43" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff">{{this.req_category}} </font></b></td>
+				</tr>
+				
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000">A</font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000"></font>Source</td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font></td>
+				</tr>
+
+				{{#each this.usr_request_cross_connect.Source}}
+					<tr>
+						<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+						<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">{{@key}}</font></td>
+						<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+						<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this}}</td>
+					</tr>
+                {{/each}}
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000">B</font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000"></font>Destination</td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font></td>
+				</tr>
+
+				{{#each this.usr_request_cross_connect.Destination}}
+					<tr>
+						<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+						<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">{{@key}}</font></td>
+						<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+						<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this}}</td>
+					</tr>
+                {{/each}}
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000"></font>ActivationDate</td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.usr_request_cross_connect.ActivationDate}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000"></font>CrossConnectType</td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.usr_request_cross_connect.CrossConnectType}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000"></font>RequestType</td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.usr_request_cross_connect.RequestType}}</td>
+				</tr>
+
+				<tr>
+					<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+					<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000"></font>Descriptions</td>
+					<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+					<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.usr_request_cross_connect.ItemDescriptions}}</td>
+				</tr>
+
+		{{/ifCond}}
+
+
+	{{/each}}
+
+
+	<tr>
+		<td valign="middle" style="border-top:2px solid #000" align="center" ><font color="#000000"></font></td>
+		<td colspan="3"  style="border-top:2px solid #000" colspan="2" valign="middle"><font color="#000000"></font></td>
+		<td valign="middle"  style="border-top:2px solid #000"  align="center"><font color="#000000"></font></td>
+		<td colspan="6" style="border-top:2px solid #000" valign="middle" align="left"><font color="#000000"></font></td>
+	</tr>
+
+	<tr>
+		<td valign="middle" align="center" ><font color="#000000"></font></td>
+		<td colspan="3"  colspan="2" valign="middle"><font color="#000000"></font></td>
+		<td valign="middle"    align="center"><font color="#000000"></font></td>
+		<td colspan="6"  valign="middle" align="left"><font color="#000000"></font></td>
+	</tr>
+
+
+	{{#each data_request_rack}}
+
+		{{#ifCond this.req_type "==" 'Additional Rack'}}
+
+			<tr>
+				<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="43" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+				<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="43" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff">{{this.req_category}} - {{this.req_type}}</font></b></td>
+			</tr>
+
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Amount Rack</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{ this.RequestItem.Amount_Rack }}</td>
+			</tr>
+			
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Rack Size</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Rack_Size}}</td>
+			</tr>
+
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Power</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.RequestItem.Power}} kVa</td>
+			</tr>
+
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Descriptions</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{"usr_request_additional.ItemDescriptions"}}</td>
+			</tr>
+
+		{{/ifCond}}
+
+		{{#ifCond this.req_type "==" 'Order Rack'}}
+		
+			<tr>
+				<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" height="43" valign="middle" bgcolor="#C00000" align="center"><b><font color="#fff"></font></b></td>
+				<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="43" colspan="10" valign="middle" bgcolor="#C00000" align="left"><b><font color="#fff">{{this.req_category}}</font></b></td>
+			</tr>
+
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Amount Rack</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.usr_request_amountrack.Amount_rack}}</td>
+			</tr>
+			
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Rack Size</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.usr_request_amountrack.Item.Rack_Size}}</td>
+			</tr>
+
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Power</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{this.usr_request_amountrack.Item.Power}} kVa</td>
+			</tr>
+
+			<tr>
+				<td valign="middle" align="center" style="border-left: 2px solid #000000;"><font color="#000000"></font></td>
+				<td colspan="3" style="border-left: 2px solid #000000; border-right: 1px solid #000000;text-align:left;" colspan="2" valign="middle"><font color="#000000">Rack Descriptions</font></td>
+				<td valign="middle"  style="border-right:1px solid #000"  align="center"><font color="#000000">:</font></td>
+				<td colspan="6" style="border-right:2px solid #000" valign="middle" align="left"><font color="#000000"></font>{{{this.usr_request_amountrack.Rack_descriptions}}}</td>
+			</tr>
+
+		{{/ifCond}}
+
+	{{/each}}
+
+
+	<tr>
+		<td valign="middle" style="border-top:2px solid #000" align="center" ><font color="#000000"></font></td>
+		<td colspan="3"  style="border-top:2px solid #000" colspan="2" valign="middle"><font color="#000000"></font></td>
+		<td valign="middle"  style="border-top:2px solid #000"  align="center"><font color="#000000"></font></td>
+		<td colspan="6" style="border-top:2px solid #000" valign="middle" align="left"><font color="#000000"></font></td>
+	</tr>
+
+
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td align="middle" colspan="2">
+			<b>Sales MettaDC</b>
+		</td>
+		<td></td>
+		<td></td>
+		<td align="middle" colspan="2">
+			<b>Delivery Team</b>
+		</td>
+		<td></td>
+		<td align="middle" colspan="2">
+			<b>Opeational Team</b>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td align="middle" colspan="2" style="border-bottom:3px solid #000">
+			
+		</td>
+		<td></td>
+		<td></td>
+		<td align="middle" colspan="2" style="border-bottom:3px solid #000">
+			
+		</td>
+		<td></td>
+		<td align="middle" colspan="2" style="border-bottom:3px solid #000">
+			
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td align="left" colspan="2">
+			<b>Name : {{data_sales.sales_name}}</b><br/>
+			<b>Date : {{data_wo.request_date}}</b>
+		</td>
+		<td></td>
+		<td></td>
+		<td align="left" colspan="2">
+			<b>Name :</b><br/>
+			<b>Date :</b>
+		</td>
+		<td></td>
+		<td align="left" colspan="2">
+			<b>Name :</b><br/>
+			<b>Date :</b>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	<tr>
+		<td colspan="11"></td>
+	</tr>
+	
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:10px }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black;  } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+		comment { display:none;  } 
+	</style>
+	
+</head>
+
+<body>
+    
+<table cellspacing="0" cellpadding="0" border="0">
+	<colgroup width="45"></colgroup>
+	<colgroup width="153"></colgroup>
+	<colgroup width="21"></colgroup>
+	<colgroup width="161"></colgroup>
+	<colgroup width="37"></colgroup>
+	<colgroup width="69"></colgroup>
+	<colgroup width="154"></colgroup>
+	<colgroup width="161"></colgroup>
+	<colgroup width="25"></colgroup>
+	<colgroup width="143"></colgroup>
+	<colgroup width="159"></colgroup>
+	<tr>
+    <td height="13" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td height="110" align="left" valign=middle><font color="#000000"><br><img src="http://202.145.0.38/fajar/logo_invoice.png" width=150  hspace=22 vspace=8>
+		</font></td>
+		<td colspan=4 align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+
+    <tr>
+        <td colspan="12" align="center"><h2 style="font-size:24px">PT. MettaDC Teknologi Indonesia</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="12" align="center"><p>Gd. Cyber 1 Lantai 3, Jalan Kuningan Barat, Kuningan Barat, Mampang Prapatan, Kota Adm. Jakarta Selatan, DKI Jakarta</p></td>
+    </tr>
+
+	<tr>
+		<td height="13" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+        <td align="left" valign=middle><font color="#000000"><br></font></td>
+        <td align="left" valign=middle><font color="#000000"><br></font></td>
+        <td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+
+
+    <tr>
+        <td colspan="12" align="center" style="background-color:#ccc"><h2 style="font-size:24px;padding-top:20px;">{{this.Invoice_type}}</h2></td>
+    </tr>
+
+	
+    <tr>
+		<td height="13" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"><br></font></td>
+        <td align="left" valign=middle><font color="#000000"><br></font></td>
+        <td align="left" valign=middle><font color="#000000"><br></font></td>
+        <td align="left" valign=middle><font color="#000000"><br></font></td>
+	</tr>
+
+
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Number</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000">{{this.Invoiceid}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Bill to</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{this.Billing_email}}<br></font></td>
+	</tr>
+
+	<tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Date</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000">{{this.invoice_date}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Name</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{this.CompanyName}}<br></font></td>
+	</tr>
+
+    <tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Due Date</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000">{{this.invoice_duedate}}<br></font></td>
+		<td align="left" valign=middle><font color="#000000">Address</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{this.CompanyAddress}}<br></font></td>
+	</tr>
+
+    <tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">References</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000">{{#each invoice_salesorder}} SO No :{{this.salesorder}} <br/>  {{/each}}</font></td>
+		<td align="left" valign=middle><font color="#000000">Attention</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{this.Name}}<br></font></td>
+	</tr>
+
+    <tr>
+		<td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" valign=middle><font color="#000000"></font></td>
+		<td align="left" colspan=4 valign=middle><font color="#000000"><br></font></td>
+		<td align="left" valign=middle><font color="#000000">Email Address</font></td>
+		<td align="left" valign=middle><font color="#000000">:</font></td>
+		<td align="left" colspan=2 valign=middle><font color="#000000">{{this.CompanyEmail}}<br></font></td>
+	</tr>
+
+
+    <tr>
+        <td valign="middle" height="23" align="left"><font color="#000000"><br></font></td>
+        <td valign="middle" colspan="3" align="left"></td>
+        <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        <td valign="middle" align="left"><font color="#000000"><br></font></td>
+        <td valign="middle" align="left"><font color="#000000"><br></font></td>
+    </tr>
+
+    <tr>
+            <td valign="middle" height="69" align="left"><font color="#000000"><br></font></td>
+            <td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;width:10px" colspan="1" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Item </font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="5"  valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Description</font></b></td>
+            <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="1" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Qty</font></b></td>
+			<td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan="1" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Unit</font></b></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Price (IDR)</font></b></td>
+            <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">Total Price (IDR)</font></b></td>
+    </tr>
+
+    {{#each Invoice_item}}
+
+
+            <tr>
+                <td valign="middle" height="97" align="left"><font color="#000000"><br></font></td>
+
+                <td style="text-align:center;vertical-align: middle;border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000;" colspan="1" valign="middle">
+                    
+					{{inc @index}}
+
+                </td>
+
+                <td style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;padding-left:15px" colspan="5" valign="middle" align="left"><font color="#000000">
+                    
+                    {{this.Item_name}} <br/>
+
+					{{#ifCond this.Item_type "==" 'Rack'}}
+						Shared Rack Space & Power
+					{{else}}
+						{{this.Item_type}}
+					{{/ifCond}}
+
+					{{#ifCond this.Item_type "==" 'Rack'}}
+
+						{{{this.Rack_description}}}
+						<br/>
+						<b>RackID : {{this.Rack_code}}</b>
+
+					{{/ifCond}}
+                    
+                    <br></font>
+                </td>
+				<td colspan="1" style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                    {{this.Contract}}
+                    <br></font>
+                </td>
+                <td colspan="1" style="border-top: 2px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" valign="middle" align="center"><font color="#000000">
+                    {{this.Unit}}
+                    <br></font>
+                </td>
+                
+                <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.Price}}<br></font></td>
+                <td style="border-top: 2px solid #000000; border-right: 2px solid #000000" sdnum="1033;0;_(&quot;IDR&quot;* #,##0_);_(&quot;IDR&quot;* \(#,##0\);_(&quot;IDR&quot;* &quot;-&quot;_);_(@_)" valign="middle" align="center"><font color="#000000">{{this.totalPrice}}<br></font></td>
+            </tr>
+            
+
+
+    {{/each}}
+
+  
+    
+    <tr>
+        <td valign="middle" height="23" align="left"><font color="#000000"><br></font></td>
+        <td style="border-top: 2px solid #000000;border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" colspan="9" valign="middle" align="center"><b><font color="#000000">Total</font></b></td>
+        <td style="border-top: 2px solid #000000;border-bottom: 2px solid #000000; border-left: 1px solid #000000; border-right: 2px solid #000000" valign="middle" bgcolor="#E7E6E6" align="center"><font color="#000000">IDR {{this.invoice_sub_total}}</font></td>
+    </tr>
+
+	<tr>
+		<td valign="middle" height="21" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+	</tr>
+
+
+	<tr>
+		<td valign="middle" height="23" align="left"><font color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-left: 2px solid #000000" colspan="9" valign="middle" align="center"><b><font color="#000000">VAT 11% </font></b></td>
+		<td style="border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" colspan="3" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">IDR {{this.invoice_sub_tax}}<br></font></b></td>
+	</tr>
+	<tr>
+		<td valign="middle" height="28" align="left"><font color="#000000"><br></font></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000" colspan="9" valign="middle" align="center"><b><font color="#000000">Total After VAT</font></b></td>
+		<td style="border-top: 2px solid #000000; border-bottom: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000" colspan="3" valign="middle" bgcolor="#D9D9D9" align="center"><b><font color="#000000">IDR {{this.invoice_total}}</font></b></td>
+	</tr>
+
+
+    <tr>
+		<td valign="middle" height="21" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+	</tr>
+
+
+    <tr>
+        <td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" colspan="8" valign=middle><font color="#000000">Please make the transfer to our account below:</font></td>
+		<td align="center" colspan="4" valign=middle><font color="#000000">PT METTADC TEKNOLOGI INDONESIA</font></td>
+	</tr>
+
+    <tr>
+        <td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" colspan="8" valign=middle><font color="#000000">PT METTADC TEKNOLOGI INDONESIA</font></td>
+		<td align="center" colspan="4" valign=middle><font color="#000000">Jakarta, {{this.invoice_date}}</font></td>
+	</tr>
+
+    <tr>
+        <td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" colspan="8" valign=middle><font color="#000000">BCA (Cabang Wisma Mulia)</font></td>
+		<td align="left" colspan="4" valign=middle><font color="#000000"></font></td>
+	</tr>
+
+    <tr>
+        <td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" colspan="8" valign=middle><font color="#000000">Acc.# : 5035 7171 85</font></td>
+		<td align="left" colspan="4" valign=middle><font color="#000000"></font></td>
+	</tr>
+
+    <tr>
+		<td valign="middle" height="21" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+		<td valign="middle" align="left"><font color="#000000"><br></font></td>
+	</tr>
+
+    <tr>
+        <td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" colspan="8" valign=middle><font color="#000000">Please Send Payment Confirmation To :</font></td>
+		<td align="left" colspan="4" valign=middle><font color="#000000"></font></td>
+	</tr>
+
+    <tr>
+        <td height="21" align="left" valign=middle><font color="#000000"><br></font></td>
+		<td align="left" colspan="8" valign=middle><font color="#000000">billing@mettadc.id </font></td>
+		<td align="center" colspan="4" valign=middle><font color="#000000">Sita Wijayanti</font></td>
+	</tr>
+
+    <tr>
+        <td colspan="12" align="center"><p>Thank you for your business</p></td>
+    </tr>
+
+
+</table>
+
+
+<!-- ************************************************************************** -->
+</body>
+
+</html>

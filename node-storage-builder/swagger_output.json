@@ -1,0 +1,538 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Storage API",
+    "description": "Pembuatan dokumentasi API ini berdasarkan standar spesifikasi OpenAPI 3.0. Dari sisi developer atau pengembang aplikasi, dengan di buatkannya dokumentasi ini diharapkan akan dapat mempermudah dalam proses pengembangan aplikasi portal admin mettaDC untuk saat ini atau kedepannya nanti.",
+    "contact": {
+      "email": "Fajar Riza Fauzi"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://202.145.0.38:4001",
+      "description": "( staging )"
+    }
+  ],
+  "paths": {
+    "/image/set": {
+      "post": {
+        "tags": [
+          "Image"
+        ],
+        "summary": "Services Upload File",
+        "description": "Merupakan services untuk upload file supported ( img/png, img/jpg)",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request Berhasil",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "respond": {
+                      "type": "object",
+                      "properties": {
+                        "uploaded": {
+                          "type": "string",
+                          "default": true
+                        },
+                        "images": {
+                          "type": "string",
+                          "default": "2022-09-23T07:53:14.461Z-index.jpg"
+                        },
+                        "url": {
+                          "type": "string",
+                          "default": "http://202.145.0.38:4001/image/get/2022-09-23T07:53:14.461Z-index.jpg"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error System",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "respond": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "default": "error"
+                        },
+                        "response": {
+                          "type": "string",
+                          "default": "upload error, contact developer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Request Gagal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "respond": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "default": "failed"
+                        },
+                        "response": {
+                          "type": "string",
+                          "default": "not supported file"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbbiden Access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "respond": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "default": "forbidden"
+                        },
+                        "response": {
+                          "type": "string",
+                          "default": "Endpoint Access Permission Not Allowed"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "upload": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/salesorder/generate": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dataCustomer": {
+                    "example": "any"
+                  },
+                  "so_number": {
+                    "example": "any"
+                  },
+                  "data": {
+                    "example": "any"
+                  },
+                  "dataSales": {
+                    "example": "any"
+                  },
+                  "dataRequest": {
+                    "example": "any"
+                  },
+                  "filter": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/salesorder/update": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "filter": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorder/generate": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dataCustomer": {
+                    "example": "any"
+                  },
+                  "wo_number": {
+                    "example": "any"
+                  },
+                  "dataSales": {
+                    "example": "any"
+                  },
+                  "filter": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/coc/generate": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dataCustomer": {
+                    "example": "any"
+                  },
+                  "coc_number": {
+                    "example": "any"
+                  },
+                  "filter": {
+                    "example": "any"
+                  },
+                  "wo_number": {
+                    "example": "any"
+                  },
+                  "dataSales": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/document/get/{images}": {
+      "get": {
+        "tags": [
+          "Image"
+        ],
+        "summary": "Services Download Document",
+        "description": "Merupakan services untuk download Document terkait ( sales order, dan Certification of Completion - COC )",
+        "parameters": [
+          {
+            "name": "images",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nama document",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request Berhasil",
+            "content": {
+              "application/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Request Gagal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "respond": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "default": "failed"
+                        },
+                        "response": {
+                          "type": "string",
+                          "default": "images not found"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/document/collect/{companycode}/{images}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "companycode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "images",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/image/get/{images}": {
+      "get": {
+        "tags": [
+          "Image"
+        ],
+        "summary": "Services Download Image",
+        "description": "Merupakan services untuk download gambar supported ( img/png, img/jpg)",
+        "parameters": [
+          {
+            "name": "images",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request Berhasil",
+            "content": {
+              "application/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Request Gagal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "respond": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "default": "failed"
+                        },
+                        "response": {
+                          "type": "string",
+                          "default": "images not found"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/qrcode/get/{images}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "images",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JsonWebToken - accessToken value"
+      }
+    }
+  }
+}

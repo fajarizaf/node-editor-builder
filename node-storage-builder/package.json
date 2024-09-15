@@ -1,0 +1,42 @@
+{
+    "name": "mettadc-upload",
+    "version": "1.0.0",
+    "description": "API upload images for mettaDC",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js",
+        "swagger-autogen": "node swagger.js"
+    },
+    "author": "Fajar Riza Fauzi",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.26.1",
+        "body-parser": "^1.19.2",
+        "connect-multiparty": "^2.2.0",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "fs": "^0.0.1-security",
+        "image-watermark": "0.0.7",
+        "image-watermark-2": "0.0.9",
+        "imagemagick": "^0.1.3",
+        "jsonwebtoken": "^8.5.1",
+        "md5": "^2.3.0",
+        "moment": "^2.29.4",
+        "multer": "^1.4.5-lts.1",
+        "mysql2": "^2.3.3",
+        "node-fetch": "^2.6.11",
+        "nodemon": "^2.0.22",
+        "pdf-creator-node": "^2.3.5",
+        "pdf-lib": "^1.17.1",
+        "pdf-watermark": "^1.0.3",
+        "pdf4me": "^9.9.37",
+        "pdfstamp": "^1.1.0",
+        "slug": "^8.0.0",
+        "swagger-autogen": "^2.22.0",
+        "swagger-ui-express": "^4.5.0",
+        "watermark-cs": "^1.0.4",
+        "watermarkjs": "^2.1.1"
+    }
+}
