@@ -12,14 +12,8 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 app.set("trust proxy", true)
 
-require('./routes/server')(app)
-require('./routes/portal')(app)
-require('./routes/domain')(app)
+require('./routes/auth')(app)
 require('./routes/site')(app)
-require('./routes/theme')(app)
-require('./routes/customer')(app)
-require('./routes/wordpress')(app)
-    
 
 sequelize.sync().then(function(){
     const PORT = process.env.PORT || 3010;

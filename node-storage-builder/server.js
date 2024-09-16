@@ -6,9 +6,6 @@ const cookieParser = require('cookie-parser')
 
 const cors = require('cors')
 
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/config/config.json')[env];
-
 app.use(cors({
   credentials:true, 
   origin:[process.env.url_frond_local_1,process.env.url_frond_local_2,process.env.url_frond_local_3,process.env.url_frond_staging_1, process.env.url_frond_staging_2, process.env.url_frond_prod_1,process.env.url_frond_prod_2]

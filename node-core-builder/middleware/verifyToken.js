@@ -33,6 +33,7 @@ exports.verifyToken = async (req,res,next) => {
 
                     req.plesk_username = hosting.respond.data.plesk_username
                     req.plesk_password = hosting.respond.data.plesk_password
+                    req.server_id = hosting.respond.data.id
                     req.server_ip = hosting.respond.data.ip_address
                     req.server_ipv4 = hosting.respond.data.ipv4
                     req.server_ipv6 = hosting.respond.data.ipv6

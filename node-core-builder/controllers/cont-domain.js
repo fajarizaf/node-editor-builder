@@ -11,7 +11,7 @@ var md5 = require('md5')
 // create subdomain
 exports.create_subdomain = (req) => new Promise((resolve, reject) => {
 
-    var ftp_login = "ftp_sitenode"
+    var ftp_login = req.body.subdomain
     var ftp_password = "Adayanghilang123@"
 
     let domainData = {
@@ -34,8 +34,7 @@ exports.create_subdomain = (req) => new Promise((resolve, reject) => {
           "external_id": req.owner_guid
         },
         "ip_addresses": [
-            req.server_ipv4,
-            req.server_ipv6
+            req.server_ip
         ],
         "ipv4": [
             req.server_ipv4
@@ -66,7 +65,7 @@ exports.create_subdomain = (req) => new Promise((resolve, reject) => {
             Site.create({
                 UserCode: req.UserCode,
                 domain_id: res.data.id,
-                domain_name: req.body.subdomain+".nodebuilder.my.id",
+                domain_name: req.body.subdomain+"."+req.base_domain_name,
                 guid: res.data.guid,
                 ftp_login: ftp_login,
                 ftp_password: ftp_password
@@ -78,7 +77,8 @@ exports.create_subdomain = (req) => new Promise((resolve, reject) => {
                         status: 'success',
                         response: 'Create Sub Domain',
                         data: {
-                            site_id: respond.id
+                            site_id: respond.id,
+                            domain_id: res.data.id
                         }
                     })
                 )
@@ -102,18 +102,31 @@ exports.create_subdomain = (req) => new Promise((resolve, reject) => {
         }
 
     }).catch( e => {
-        console.log(e)
+        
         reject({
             status:'failed', 
             response: e.message+' Contact Administrator'
         })
+
     })
 
 })
 
-// delete domain or subdomain
-exports.delete = (req) => new Promise((resolve, reject) => {
 
+// create database for subdomain
+exports.create_database = (req) => new Promise((resolve, reject) => {
+
+    let dbData = {
+        "name": req.body.db_name,
+        "type": "mysql",
+        "parent_domain": {
+            "id": req.base_domain_id,
+            "name": req.base_domain_name,
+            "guid": req.base_domain_guid
+        },
+        "server_id": req.server_id
+    }
+    
     const headers = {
         'Content-Type': 'application/json',
          Accept: 'application/json',
@@ -122,51 +135,40 @@ exports.delete = (req) => new Promise((resolve, reject) => {
     }
     
     axios.request({
-        method: 'DELETE',
-        url: req.server_host+'/api/v2/domains/'+req.query.id,
+        method: 'POST',
+        url: req.server_host+'/api/v2/databases',
         maxRedirects: 0,
         responseType:'json',
+        data:JSON.stringify(dbData),
         headers: headers
     }).then(res => {
         
         if(res.data.id) {
 
-            Site.destroy({
-                where: {
-                    domain_id: req.query.id
-                }
-            })
-            .then((respond) => {
-                
-                resolve(
-                    convertToJson({
-                        status: 'success',
-                        response: 'Delete Domain',
-                    })
-                )
-                    
-            })
-            .catch((e) => {
-                resolve(
-                    convertToJson(
-                        {respond: {status: 'errors', response: e.message}}
-                    )
-                )
-            })
+            resolve(
+                convertToJson({
+                    status: 'success',
+                    response: 'Create Databases',
+                    data: {
+                        database_id: res.id
+                    }
+                })
+            )
 
         } else {
-
+            
             reject({
                 status:'failed', 
-                response: res.data+' Contact Administrator'
+                response: res.data+' Contact Administratord'
             })
 
         }
 
     }).catch( e => {
+       
         reject({
             status:'failed', 
-            response: e.message+' Contact Administrator'
+            response: e.message+' Contact Administratora'
         })
     })
 
@@ -209,35 +211,4 @@ function convertToJson(strings) {
     let string = JSON.stringify(strings)
     return JSON.parse(string)
 }
-
-
-exports.get_site = (site_id) => new Promise((resolve, reject) => {
-
-    Site.findOne({
-        where: {
-            id: site_id
-        }
-    })
-    .then((respond) => {
-        if(respond != '') {
-            resolve(convertToJson({
-                respond: {
-                    status: 'success',
-                    data: respond
-                }
-            }))
-        } else {
-            resolve(convertToJson({respond:{status:'failed',response: 'site not found'}}))
-        }
-
-    })
-    .catch((e) => {
-        reject(
-            convertToJson(
-                {respond: {status: 'error',response: e.message}}
-            )
-        )
-    })
-
-})
 

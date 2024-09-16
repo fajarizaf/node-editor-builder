@@ -4,6 +4,12 @@ module.exports = (sequelize, DataTypes) => {
     ip_address:{
       type: DataTypes.STRING(90)
     },
+    ipv4:{
+      type: DataTypes.STRING(90)
+    },
+    ipv6:{
+      type: DataTypes.STRING(90)
+    },
     host_name:{
         type: DataTypes.STRING(20),
         allowNull: true,

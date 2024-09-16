@@ -1,68 +1,20 @@
-
+const axios = require("axios").default;
+const nodebase64 = require('nodejs-base64-converter')
 
 // models
-const models = require('../models')
+const models = require('../models');
 const Site = models.Site
-const Cms = models.Cms
 
 
-exports.list = (req) => new Promise((resolve, reject) => {
-
-    Site.findAll({
-        where: {
-            UserCode: req.UserCode
-        },
-        attributes:['id','domain_id','domain_name'],
-        include: [
-            {
-                model: Cms, as: 'cms',
-                required : true,
-                attributes:['id','site_id','instance_id','title','login_email','login_username','login_password'],
-            }
-        ]
-    })
-    .then((respond) => {
-        if(respond) {
-            resolve(convertToJson({
-                respond: {
-                    status: 'success',
-                    data: respond
-                }
-            }))
-        } else {
-            resolve(convertToJson({respond:{status:'failed',response: 'site not found'}}))
-        }
-
-    })
-    .catch((e) => {
-        reject(
-            convertToJson(
-                {respond: {status: 'error',response: e.message}}
-            )
-        )
-    })
-
-})
-
-
-exports.detail = (req, site_id) => new Promise((resolve, reject) => {
+exports.get_site = (domain_id) => new Promise((resolve, reject) => {
 
     Site.findOne({
         where: {
-            UserCode: req.UserCode,
-            id:site_id
-        },
-        attributes:['id','domain_id','domain_name','ftp_login','ftp_password'],
-        include: [
-            {
-                model: Cms, as: 'cms',
-                required : true,
-                attributes:['id','site_id','instance_id','title','login_email','login_username','login_password'],
-            }
-        ]
+            domain_id: domain_id
+        }
     })
     .then((respond) => {
-        if(respond) {
+        if(respond != '') {
             resolve(convertToJson({
                 respond: {
                     status: 'success',
@@ -83,7 +35,6 @@ exports.detail = (req, site_id) => new Promise((resolve, reject) => {
     })
 
 })
-
 
 function convertToJson(strings) {
     let string = JSON.stringify(strings)
