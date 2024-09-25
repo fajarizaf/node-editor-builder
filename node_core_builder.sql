@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 16, 2024 at 04:10 AM
--- Server version: 8.0.39
--- PHP Version: 8.2.23
+-- Waktu pembuatan: 23 Sep 2024 pada 13.48
+-- Versi server: 8.0.31
+-- Versi PHP: 8.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cms`
+-- Struktur dari tabel `cms`
 --
 
 CREATE TABLE `cms` (
@@ -40,7 +40,7 @@ CREATE TABLE `cms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `cms`
+-- Dumping data untuk tabel `cms`
 --
 
 INSERT INTO `cms` (`id`, `site_id`, `instance_id`, `title`, `login_email`, `login_username`, `login_password`, `createdAt`, `updatedAt`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `cms` (`id`, `site_id`, `instance_id`, `title`, `login_email`, `logi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `configs`
+-- Struktur dari tabel `configs`
 --
 
 CREATE TABLE `configs` (
@@ -62,7 +62,7 @@ CREATE TABLE `configs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `configs`
+-- Dumping data untuk tabel `configs`
 --
 
 INSERT INTO `configs` (`id`, `config_name`, `config_value`, `createdAt`, `updatedAt`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `configs` (`id`, `config_name`, `config_value`, `createdAt`, `update
 -- --------------------------------------------------------
 
 --
--- Table structure for table `servers`
+-- Struktur dari tabel `servers`
 --
 
 CREATE TABLE `servers` (
@@ -98,7 +98,7 @@ CREATE TABLE `servers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `servers`
+-- Dumping data untuk tabel `servers`
 --
 
 INSERT INTO `servers` (`id`, `ip_address`, `ipv4`, `ipv6`, `host_name`, `plesk_username`, `plesk_password`, `ssh_host`, `ssh_user`, `ssh_password`, `server_status`, `createdAt`, `updatedAt`) VALUES
@@ -107,13 +107,13 @@ INSERT INTO `servers` (`id`, `ip_address`, `ipv4`, `ipv6`, `host_name`, `plesk_u
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sites`
+-- Struktur dari tabel `sites`
 --
 
 CREATE TABLE `sites` (
   `id` int NOT NULL,
   `domain_id` int DEFAULT NULL,
-  `UserCode` varchar(30) DEFAULT NULL,
+  `subscription_id` int DEFAULT NULL,
   `domain_name` varchar(90) DEFAULT NULL,
   `guid` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `ftp_login` varchar(50) DEFAULT NULL,
@@ -123,23 +123,24 @@ CREATE TABLE `sites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `sites`
+-- Dumping data untuk tabel `sites`
 --
 
-INSERT INTO `sites` (`id`, `domain_id`, `UserCode`, `domain_name`, `guid`, `ftp_login`, `ftp_password`, `createdAt`, `updatedAt`) VALUES
-(20, 2, 'USR1', 'editor.nodebuilder.id', 'eb1e9eb9-4da5-431b-90ff-6f261fcea12d', 'userlogin', 'adayanghilang', '2024-01-17 03:28:15', '2024-01-17 03:28:15'),
-(22, 4, 'USR1', 'pages.nodebuilder.id', '6db69e9b-ab98-4866-9a9d-eb0c84ffe177', 'ftp_sitenode', 'Adayanghilang123@', '2024-09-15 02:26:56', '2024-09-15 02:26:56'),
-(31, 24, 'USR1', 'land.nodebuilder.my.id', '7cc789fc-df38-4e18-9b7f-47eb0f7dfbd9', 'land', 'Adayanghilang123@', '2024-09-15 15:30:37', '2024-09-15 15:30:37'),
-(32, 25, 'USR1', 'romo.nodebuilder.my.id', 'ef8d9b2b-cdfe-4d3a-b2d9-a7fef0fc4ae3', 'romo', 'Adayanghilang123@', '2024-09-15 15:34:40', '2024-09-15 15:34:40'),
-(33, 26, 'USR1', 'cena.nodebuilder.my.id', '506cf6cd-6b94-4ddf-b73e-65aa2e60d290', 'cena', 'Adayanghilang123@', '2024-09-15 16:09:14', '2024-09-15 16:09:14'),
-(34, 27, 'USR1', 'gista.nodebuilder.my.id', '48702d8e-319d-447b-84c4-f847efdc61d4', 'gista', 'Adayanghilang123@', '2024-09-15 16:11:51', '2024-09-15 16:11:51'),
-(35, 28, 'USR1', 'cinta.nodebuilder.id', 'f8422b08-3856-41cc-a7d5-1e2d35cae03e', 'cinta', 'Adayanghilang123@', '2024-09-15 16:14:48', '2024-09-15 16:14:48'),
-(36, 29, 'USR1', 'nova.nodebuilder.id', '6648939f-7423-4334-86cc-8eb1cefcc414', 'nova', 'Adayanghilang123@', '2024-09-16 02:26:28', '2024-09-16 02:26:28');
+INSERT INTO `sites` (`id`, `domain_id`, `subscription_id`, `domain_name`, `guid`, `ftp_login`, `ftp_password`, `createdAt`, `updatedAt`) VALUES
+(20, 2, 1, 'editor.nodebuilder.id', 'eb1e9eb9-4da5-431b-90ff-6f261fcea12d', 'userlogin', 'adayanghilang', '2024-01-17 03:28:15', '2024-01-17 03:28:15'),
+(22, 4, 2, 'pages.nodebuilder.id', '6db69e9b-ab98-4866-9a9d-eb0c84ffe177', 'ftp_sitenode', 'Adayanghilang123@', '2024-09-15 02:26:56', '2024-09-15 02:26:56'),
+(31, 24, 3, 'land.nodebuilder.my.id', '7cc789fc-df38-4e18-9b7f-47eb0f7dfbd9', 'land', 'Adayanghilang123@', '2024-09-15 15:30:37', '2024-09-15 15:30:37'),
+(32, 25, 4, 'romo.nodebuilder.my.id', 'ef8d9b2b-cdfe-4d3a-b2d9-a7fef0fc4ae3', 'romo', 'Adayanghilang123@', '2024-09-15 15:34:40', '2024-09-15 15:34:40'),
+(33, 26, 5, 'cena.nodebuilder.my.id', '506cf6cd-6b94-4ddf-b73e-65aa2e60d290', 'cena', 'Adayanghilang123@', '2024-09-15 16:09:14', '2024-09-15 16:09:14'),
+(34, 27, 6, 'gista.nodebuilder.my.id', '48702d8e-319d-447b-84c4-f847efdc61d4', 'gista', 'Adayanghilang123@', '2024-09-15 16:11:51', '2024-09-15 16:11:51'),
+(35, 28, 7, 'cinta.nodebuilder.id', 'f8422b08-3856-41cc-a7d5-1e2d35cae03e', 'cinta', 'Adayanghilang123@', '2024-09-15 16:14:48', '2024-09-15 16:14:48'),
+(36, 29, 8, 'nova.nodebuilder.id', '6648939f-7423-4334-86cc-8eb1cefcc414', 'nova', 'Adayanghilang123@', '2024-09-16 02:26:28', '2024-09-16 02:26:28'),
+(37, 31, 9, 'buli.nodebuilder.id', '838cd4ef-399e-4d66-97f4-aa677c064830', 'buli', 'Adayanghilang123@', '2024-09-23 13:34:17', '2024-09-23 13:34:17');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `themes`
+-- Struktur dari tabel `themes`
 --
 
 CREATE TABLE `themes` (
@@ -158,7 +159,7 @@ CREATE TABLE `themes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `themes`
+-- Dumping data untuk tabel `themes`
 --
 
 INSERT INTO `themes` (`id`, `theme_author`, `theme_category`, `theme_type`, `theme_editor`, `theme_name`, `theme_desc`, `theme_cover`, `createdAt`, `updatedAt`, `theme_code`, `theme_link`) VALUES
@@ -172,7 +173,7 @@ INSERT INTO `themes` (`id`, `theme_author`, `theme_category`, `theme_type`, `the
 -- --------------------------------------------------------
 
 --
--- Table structure for table `theme_authors`
+-- Struktur dari tabel `theme_authors`
 --
 
 CREATE TABLE `theme_authors` (
@@ -184,7 +185,7 @@ CREATE TABLE `theme_authors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `theme_authors`
+-- Dumping data untuk tabel `theme_authors`
 --
 
 INSERT INTO `theme_authors` (`id`, `author_theme_name`, `author_slug`, `createdAt`, `updatedAt`) VALUES
@@ -193,7 +194,7 @@ INSERT INTO `theme_authors` (`id`, `author_theme_name`, `author_slug`, `createdA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `theme_categoris`
+-- Struktur dari tabel `theme_categoris`
 --
 
 CREATE TABLE `theme_categoris` (
@@ -204,7 +205,7 @@ CREATE TABLE `theme_categoris` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `theme_categoris`
+-- Dumping data untuk tabel `theme_categoris`
 --
 
 INSERT INTO `theme_categoris` (`id`, `categori_theme_name`, `createdAt`, `updatedAt`) VALUES
@@ -215,23 +216,23 @@ INSERT INTO `theme_categoris` (`id`, `categori_theme_name`, `createdAt`, `update
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usercredentials`
+-- Struktur dari tabel `usercredentials`
 --
 
 CREATE TABLE `usercredentials` (
   `id` int NOT NULL,
-  `UserCode` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `UserLogin` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `PasswordLogin` text COLLATE utf8mb4_general_ci,
-  `VerifyCode` varchar(45) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `UserCode` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `UserLogin` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `PasswordLogin` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `VerifyCode` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `FgVerified` int DEFAULT NULL,
-  `FgActive` char(1) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `FgActive` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usercredentials`
+-- Dumping data untuk tabel `usercredentials`
 --
 
 INSERT INTO `usercredentials` (`id`, `UserCode`, `UserLogin`, `PasswordLogin`, `VerifyCode`, `FgVerified`, `FgActive`, `createdAt`, `updatedAt`) VALUES
@@ -243,24 +244,24 @@ INSERT INTO `usercredentials` (`id`, `UserCode`, `UserLogin`, `PasswordLogin`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userlogs`
+-- Struktur dari tabel `userlogs`
 --
 
 CREATE TABLE `userlogs` (
   `id` int NOT NULL,
-  `descriptions` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `user` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `UserCode` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `ipaddr` varchar(170) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `useragent` longtext COLLATE utf8mb4_general_ci,
-  `req` longtext COLLATE utf8mb4_general_ci,
-  `res` longtext COLLATE utf8mb4_general_ci,
+  `descriptions` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `UserCode` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ipaddr` varchar(170) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `useragent` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `req` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `res` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `userlogs`
+-- Dumping data untuk tabel `userlogs`
 --
 
 INSERT INTO `userlogs` (`id`, `descriptions`, `user`, `UserCode`, `ipaddr`, `useragent`, `req`, `res`, `createdAt`, `updatedAt`) VALUES
@@ -288,20 +289,20 @@ INSERT INTO `userlogs` (`id`, `descriptions`, `user`, `UserCode`, `ipaddr`, `use
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userprofiles`
+-- Struktur dari tabel `userprofiles`
 --
 
 CREATE TABLE `userprofiles` (
-  `UserCode` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `ContactName` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Phone` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Email` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `UserCode` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ContactName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `Email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `userprofiles`
+-- Dumping data untuk tabel `userprofiles`
 --
 
 INSERT INTO `userprofiles` (`UserCode`, `ContactName`, `Phone`, `Email`, `createdAt`, `updatedAt`) VALUES
@@ -310,37 +311,76 @@ INSERT INTO `userprofiles` (`UserCode`, `ContactName`, `Phone`, `Email`, `create
 ('USR3', 'dodit', NULL, 'dodit@gmail.com', '2024-02-08 05:52:05', '2024-02-08 05:52:05'),
 ('USR4', 'dodit', NULL, 'dodits@gmail.com', '2024-02-08 05:56:49', '2024-02-08 05:56:49');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint UNSIGNED NOT NULL,
+  `role_id` int DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users_roles`
+--
+
+CREATE TABLE `users_roles` (
+  `id` int NOT NULL,
+  `role_name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `role_type` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `status_id` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `users_roles`
+--
+
+INSERT INTO `users_roles` (`id`, `role_name`, `role_type`, `status_id`) VALUES
+(1, 'Administrator', 'admin', '1001'),
+(2, 'Owner', 'customer', '1001');
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `cms`
+-- Indeks untuk tabel `cms`
 --
 ALTER TABLE `cms`
   ADD PRIMARY KEY (`id`),
   ADD KEY `site_id` (`site_id`);
 
 --
--- Indexes for table `configs`
+-- Indeks untuk tabel `configs`
 --
 ALTER TABLE `configs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `servers`
+-- Indeks untuk tabel `servers`
 --
 ALTER TABLE `servers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sites`
+-- Indeks untuk tabel `sites`
 --
 ALTER TABLE `sites`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `themes`
+-- Indeks untuk tabel `themes`
 --
 ALTER TABLE `themes`
   ADD PRIMARY KEY (`id`),
@@ -348,69 +388,94 @@ ALTER TABLE `themes`
   ADD KEY `theme_category` (`theme_category`);
 
 --
--- Indexes for table `theme_authors`
+-- Indeks untuk tabel `theme_authors`
 --
 ALTER TABLE `theme_authors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `theme_categoris`
+-- Indeks untuk tabel `theme_categoris`
 --
 ALTER TABLE `theme_categoris`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeks untuk tabel `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indeks untuk tabel `users_roles`
+--
+ALTER TABLE `users_roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `cms`
+-- AUTO_INCREMENT untuk tabel `cms`
 --
 ALTER TABLE `cms`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `configs`
+-- AUTO_INCREMENT untuk tabel `configs`
 --
 ALTER TABLE `configs`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `servers`
+-- AUTO_INCREMENT untuk tabel `servers`
 --
 ALTER TABLE `servers`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `sites`
+-- AUTO_INCREMENT untuk tabel `sites`
 --
 ALTER TABLE `sites`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `themes`
+-- AUTO_INCREMENT untuk tabel `themes`
 --
 ALTER TABLE `themes`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `theme_authors`
+-- AUTO_INCREMENT untuk tabel `theme_authors`
 --
 ALTER TABLE `theme_authors`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `theme_categoris`
+-- AUTO_INCREMENT untuk tabel `theme_categoris`
 --
 ALTER TABLE `theme_categoris`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT untuk tabel `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `users_roles`
+--
+ALTER TABLE `users_roles`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `themes`
+-- Ketidakleluasaan untuk tabel `themes`
 --
 ALTER TABLE `themes`
   ADD CONSTRAINT `themes_ibfk_1` FOREIGN KEY (`theme_author`) REFERENCES `theme_authors` (`id`) ON UPDATE CASCADE,
